@@ -205,10 +205,10 @@ public class TEM {
         tem.afkListener = new PlayerAFKListener();
         tem.api = new Hypixel(tem);
         tem.getConfig().setHypixelKey(apiKey);
-        tem.getConfig().setSpareRateLimit(0);
+        tem.getConfig().setSpareRateLimit(5);
         // 15 is a decent number for minimising ram usage
-        tem.getConfig().setMaxSimultaneousThreads(15);
-        tem.getConfig().setTimeOffset(0);
+        tem.getConfig().setMaxSimultaneousThreads(120);
+        tem.getConfig().setTimeOffset(10);
         tem.getConfig().setEnableContributions(true);
         new Thread(tem.socketHandler::reconnectSocket, "TEM-socket").start();
         // Create global API/rate-limit handler
